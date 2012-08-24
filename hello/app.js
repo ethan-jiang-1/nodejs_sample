@@ -1,3 +1,15 @@
+var http = require('http');
+
+http.createServer(function (req, res) {
+ res.writeHead(200, {'Content-Type': 'text/plain'});
+ res.end('Hello World from jyz\n');
+}).listen(1337, '127.0.0.1');
+console.log('Server running at http://127.0.0.1:1337/');
+
+//vmc auto config the listen port in loadbanlance as 80
+//see here for details: http://blog.cloudfoundry.com/2012/08/14/cloud-foundry-now-supports-auto-reconfiguration-for-node-js-applications/
+
+/*
 //require.paths.unshift('./node_modules')
 
 var express = require('./node_modules/express');
@@ -19,3 +31,4 @@ app.get('/', function(req, res){
 app.listen(port)
 
 console.log('Server running at port: '+ port );
+*/
